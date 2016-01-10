@@ -34,22 +34,8 @@ for i in stnode.childnodes: #スタートノードと終点ノードが同じ、
 	if stnode.nd == endNode:
 		print "no route :)" 
 
-nxn = [[] for j in range(7)]
+nxn = [[]]
 for nextnode in stnode.childnodes: #スタートノードの次のノードの作成
 	nxn[0].append(mkway_node(nextnode))
 
-for count in range(5): #階層ルート作成
-	for childobj in nxn[count]:
-		for nextnode in childobj.childnodes:
-			nxn[count+1].append(mkway_node(nextnode))
-
-def search_end(eN):
-	for aindex,a in enumerate(nxn):    #Nodeオブジェクトはnxnに二次元配列として格納している
-	    for bindex,b in enumerate(a):
-		for c in b.childnodes:
-			if c  == eN:
-				print  eN + "あった" + " " + "nxn[" + str(aindex) + "][" + str(bindex) +"]"
-				#sys.exit()
-	
-search_end(endNode)		
-	
+for 
