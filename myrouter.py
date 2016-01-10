@@ -28,12 +28,18 @@ def mkway_node(onenode): #ノード作成
 
 stnode = mkway_node(startNode) #スタートノードの取得
 
-for i in stnode.childnodes:
+for i in stnode.childnodes: #スタートノードと終点ノードが同じ、または次のノードである
 	if i == endNode:
-		print startNode + "," + i
+		print startNode + "," + i + " " + "Goal!"
+	if stnode.nd == endNode:
+		print "no route :)" 
 
-nxn = []
+nxn = [[]]
 for nextnode in stnode.childnodes: #スタートノードの次のノードの作成
-	nxn.append(mkway_node(nextnode))
+	nxn[0].append(mkway_node(nextnode))
 
+for count in range(5):
+	for childobj in nxn[count]:
+		for nextnode in childobj.childnodes:
+			nxn[count].append(mkway_node(nextnode))
 	
