@@ -4,6 +4,8 @@
 import csv
 import sys
 import pprint
+import near_node as near #　座標の近くのway node 取得関数
+
 class Node:
     def __init__(self,nodeName,beforeobj):
 	self.nd = nodeName
